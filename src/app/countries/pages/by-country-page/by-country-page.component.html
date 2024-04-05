@@ -4,7 +4,7 @@
 <div class="row justify-content-center align-items-center g-2">
     <div class="col">
         <!-- Searchbox -->
-        <shared-search-box (onNewSearch)="searchByCountry($event)" placeholder="Ingresa un Pais"></shared-search-box>
+        <shared-search-box (onDebounce)="searchByCountry($event)" [initialValue]="initialValue" placeholder="Ingresa un Pais"></shared-search-box>
     </div>
 </div>
 

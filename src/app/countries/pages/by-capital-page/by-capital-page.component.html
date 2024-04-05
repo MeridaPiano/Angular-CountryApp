@@ -4,13 +4,16 @@
 <div class="row justify-content-center align-items-center g-2">
     <div class="col">
         <!-- Searchbox -->
-        <shared-search-box (onNewSearch)="searchByCapital($event)" placeholder="Este es un nuevo placehoder"></shared-search-box>
+        <!-- (onNewSearch)="searchByCapital($event)"  -->
+        <shared-search-box (onDebounce)="searchByCapital($event)" [initialValue]="initialValue" placeholder="Este es un nuevo placehoder"></shared-search-box>
     </div>
 </div>
 
 <div class="row justify-content-center align-items-center g-2">
     <div class="col">
         <hr>
-        <countries-table [countries]="countries">Hola</countries-table>
+        <shared-loading-spinner *ngIf="isLoading"></shared-loading-spinner>
+
+        <countries-table [countries]="countries"></countries-table>
     </div>
 </div>
